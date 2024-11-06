@@ -146,7 +146,7 @@ h1, h2, h3 {
   padding: 0 15px;
   display: grid;
   grid-template-columns: auto auto;
-  row-gap: 67px;
+  row-gap: 40px;
   column-gap: 50px;
 }
 .about__info {
@@ -190,6 +190,83 @@ h1, h2, h3 {
   font-size: 18px;
   color: rgb(63, 62, 62);
   line-height: 1.167;
+}
+
+.teachers {
+  padding-top: 115px;
+}
+.teachers__container {
+  padding: 0 15px;
+  text-align: center;
+}
+.teachers__text {
+  margin: 60px auto 0 auto;
+  font-size: 18px;
+  color: rgb(63, 62, 62);
+  line-height: 1.611;
+  max-width: 721px;
+}
+.teachers__carousel {
+  margin-top: 60px;
+}
+.teachers .teacher__proto {
+  border: 10px solid rgb(244, 222, 255);
+  border-radius: 50%;
+  width: 235px;
+  height: 235px;
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.teachers .teacher__name {
+  font-size: 20px;
+  font-family: RalewayLight, sans-serif;
+  color: rgb(63, 62, 62);
+  margin-top: 12px;
+}
+.teachers .teacher__experience {
+  font-family: RailwayMedium, sans-serif;
+  font-size: 14px;
+}
+.teachers .teacher__experience .celestina_font {
+  font-size: 20px;
+}
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.slick-list {
+  width: 88%;
+  margin: 0 auto;
+}
+
+.slick-arrow {
+  width: 22px;
+  height: 22px;
+  top: 110px;
+  border-right: 2px solid #cccccc;
+  border-top: 2px solid #cccccc;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+}
+
+.slick-next.slick-arrow {
+  right: 5px;
+}
+
+.slick-prev.slick-arrow {
+  left: 5px;
+  z-index: 1;
+}
+
+.slick-arrow::before {
+  content: "";
+}
+
+.slick-arrow.slick-prev {
+  transform: rotate(-135deg);
 }
 
 @media screen and (max-width: 1024px) {
