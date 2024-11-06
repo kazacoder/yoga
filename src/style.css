@@ -88,6 +88,8 @@ h1, h2, h3 {
   gap: 108px;
   align-items: end;
   padding-top: 6px;
+  z-index: 1;
+  position: relative;
 }
 
 .menu__list {
@@ -165,6 +167,10 @@ h1, h2, h3 {
   height: 374px;
   box-sizing: border-box;
 }
+.about__video video:fullscreen {
+  border: none;
+  border-radius: unset;
+}
 .about__advantages {
   grid-column-start: 1;
   grid-column-end: 3;
@@ -184,6 +190,23 @@ h1, h2, h3 {
   font-size: 18px;
   color: rgb(63, 62, 62);
   line-height: 1.167;
+}
+
+@media screen and (max-width: 1024px) {
+  .about__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .about__video {
+    max-width: 100%;
+    height: auto;
+  }
+  .about__video video {
+    max-width: 100%;
+    height: auto;
+    border-width: 3px;
+    border-radius: 15px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

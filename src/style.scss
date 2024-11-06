@@ -1,192 +1,218 @@
 @import "fonts";
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: Railway, sans-serif;
+    font-family: Railway, sans-serif;
 }
 
 h1, h2, h3 {
-  font-weight: normal;
+    font-weight: normal;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .celestina_font {
-  font-family: 'Celestina', sans-serif;
+    font-family: 'Celestina', sans-serif;
 }
 
 .btn {
-  cursor: pointer;
-  font-size: 18px;
-  font-family: RailwayBold, sans-serif;
-  color: rgb(63, 62, 62);
-  padding: 21px 21px 22px 21px;
-  background-color: #f4deff;
-  border: 3px solid #f4deff;
-  border-radius: 35px;
-  text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: RailwayBold, sans-serif;
+    color: rgb(63, 62, 62);
+    padding: 21px 21px 22px 21px;
+    background-color: #f4deff;
+    border: 3px solid #f4deff;
+    border-radius: 35px;
+    text-align: center;
 
-  &:hover {
-    box-shadow: 0px 22px 23.52px 0.48px rgba(244, 222, 255, 0.45);
-  }
+    &:hover {
+        box-shadow: 0px 22px 23.52px 0.48px rgba(244, 222, 255, 0.45);
+    }
 
-  &.main__btn {
-    width: 240px;
-  }
+    &.main__btn {
+        width: 240px;
+    }
 
-  &.btn_transparent {
-    background-color: transparent;
-  }
+    &.btn_transparent {
+        background-color: transparent;
+    }
 }
 
 .common-title {
-  font-size: 55px;
-  font-family: Celestina, sans-serif;
-  color: rgb(63, 62, 62);
+    font-size: 55px;
+    font-family: Celestina, sans-serif;
+    color: rgb(63, 62, 62);
 }
 
 .main {
-  background-image: url("../images/bg_main.png");
-  background-repeat: no-repeat;
-  background-position: right top;
-  position: relative;
-
-  &__container {
+    background-image: url("../images/bg_main.png");
+    background-repeat: no-repeat;
+    background-position: right top;
     position: relative;
-    padding: 0 15px;
-  }
+
+    &__container {
+        position: relative;
+        padding: 0 15px;
+    }
 }
 
 .header {
-  display: flex;
-  gap: 108px;
-  align-items: end;
-  padding-top: 6px;
+    display: flex;
+    gap: 108px;
+    align-items: end;
+    padding-top: 6px;
+    z-index: 1;
+    position: relative;
 
 }
 
 .menu__list {
-  list-style: none;
-  display: flex;
-  gap: 55px;
-  margin-bottom: 6px;
+    list-style: none;
+    display: flex;
+    gap: 55px;
+    margin-bottom: 6px;
 }
 
 .menu__item {
-  & a {
-    text-decoration: none;
-    font-size: 18px;
-    font-family: RailwayLight, sans-serif;
-    color: rgb(63, 62, 62);
-  }
+    & a {
+        text-decoration: none;
+        font-size: 18px;
+        font-family: RailwayLight, sans-serif;
+        color: rgb(63, 62, 62);
+    }
 }
 
 
 .main-content {
-  display: flex;
-  padding-bottom: 337px;
-
-  &__info {
-    margin-top: 122px;
-    max-width: 600px;
-    z-index: 1;
-
-  }
-
-  &__title {
-    font-family: RailwayLight, sans-serif;
-    font-size: 54px;
-    line-height: 1.15;
-
-    & .celestina_font {
-      font-size: 55px;
-    }
-  }
-
-  &__text {
-    margin-top: 50px;
-    font-size: 20px;
-    color: rgb(63, 62, 62);
-    line-height: 1.5;
-    max-width: 435px;
-  }
-
-  &__actions {
-    margin-top: 72px;
     display: flex;
-    gap: 35px;
-  }
+    padding-bottom: 337px;
 
-  &__image {
-    position: absolute;
-    right: 40px;
-    top: 4px;
-    z-index: 0;
-  }
+    &__info {
+        margin-top: 122px;
+        max-width: 600px;
+        z-index: 1;
+
+    }
+
+    &__title {
+        font-family: RailwayLight, sans-serif;
+        font-size: 54px;
+        line-height: 1.15;
+
+        & .celestina_font {
+            font-size: 55px;
+        }
+    }
+
+    &__text {
+        margin-top: 50px;
+        font-size: 20px;
+        color: rgb(63, 62, 62);
+        line-height: 1.5;
+        max-width: 435px;
+    }
+
+    &__actions {
+        margin-top: 72px;
+        display: flex;
+        gap: 35px;
+    }
+
+    &__image {
+        position: absolute;
+        right: 40px;
+        top: 4px;
+        z-index: 0;
+    }
 }
 
 
 .about {
-  &__container {
-    padding: 0 15px;
-    display: grid;
-    grid-template-columns: auto auto;
-    row-gap: 67px;
-    column-gap: 50px;
-  }
-
-  &__info {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  &__text {
-      font-size: 18px;
-      color: rgb(63, 62, 62);
-      line-height: 1.611;
-  }
-
-  &__video {
-    & video, & iframe {
-      border: 10px solid rgb(244, 222, 255);
-      border-radius: 40px;
-      object-fit: cover;
-
-      width: 764px;
-      height: 374px;
-      box-sizing: border-box;
+    &__container {
+        padding: 0 15px;
+        display: grid;
+        grid-template-columns: auto auto;
+        row-gap: 67px;
+        column-gap: 50px;
     }
-  }
 
-  &__advantages {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  & .about-advantage {
-    width: 204px;
-    text-align: center;
-
-    &__title {
-      font-size: 50px;
-      font-family: Celestina, sans-serif;
-      color: rgb(143, 127, 151);
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     &__text {
         font-size: 18px;
         color: rgb(63, 62, 62);
-        line-height: 1.167;
+        line-height: 1.611;
     }
-  }
+
+    &__video {
+        & video, & iframe {
+            border: 10px solid rgb(244, 222, 255);
+            border-radius: 40px;
+            object-fit: cover;
+            width: 764px;
+            height: 374px;
+            box-sizing: border-box;
+        }
+
+        & video:fullscreen {
+            border: none;
+            border-radius: unset;
+        }
+    }
+
+    &__advantages {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    & .about-advantage {
+        width: 204px;
+        text-align: center;
+
+        &__title {
+            font-size: 50px;
+            font-family: Celestina, sans-serif;
+            color: rgb(143, 127, 151);
+        }
+
+        &__text {
+            font-size: 18px;
+            color: rgb(63, 62, 62);
+            line-height: 1.167;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px){
+    .about__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about__video {
+        max-width: 100%;
+        height: auto;
+        & video {
+            max-width: 100%;
+            height: auto;
+            border-width: 3px;
+            border-radius: 15px;
+        }
+    }
+
 }
