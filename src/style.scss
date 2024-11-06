@@ -250,6 +250,48 @@ h1, h2, h3 {
 }
 
 
+.services {
+    padding-top: 115px;
+
+    &__container {
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    &__items {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 42px;
+        flex-wrap: wrap;
+    }
+
+    &__btn {
+        width: 360px;
+    }
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    &__image {
+        width: 268px;
+        height: 300px;
+        box-sizing: border-box;
+        border: 5px solid rgb(244, 222, 255);
+        border-radius: 20px;
+        background-size: cover;
+    }
+    &__title {
+        font-size: 25px;
+        font-family: RalewayLight, sans-serif;
+        color: rgb(63, 62, 62);
+    }
+}
+
+
 // Slick slider styles override
 
 .slick-slide {
@@ -312,7 +354,6 @@ h1, h2, h3 {
 
 @media screen and (max-width: 800px) {
     .menu,
-    .services,
     .studies,
     .contacts
     {
