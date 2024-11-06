@@ -7,11 +7,14 @@ $(document).ready(function () {
         speed: 500,
         cssEase: 'linear',
         slidesToShow: 3,
-        slidesToScroll: 5,
+        // slidesToScroll: 1,
         responsive: [
             {breakpoint: 1400,},
             {
                 breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                }
 
             },
             {
@@ -21,14 +24,14 @@ $(document).ready(function () {
                 }
             },
             {
-                breakpoint: 768,
+                breakpoint: 668,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1
                 }
 
             },
             {
-                breakpoint: 750,
+                breakpoint: 425,
                 settings: {
                     slidesToShow: 1,
                 }
@@ -43,12 +46,12 @@ $(document).ready(function () {
             {
                 breakpoint: 320,
                 settings: {
+                    slidesToShow: 1,
                 }
             },
         ],
 
     });
-
 
 
     let video = document.getElementById('video')

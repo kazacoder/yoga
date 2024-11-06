@@ -238,7 +238,7 @@ h1, h2, h3 {
 }
 
 .slick-list {
-  width: 88%;
+  max-width: 88%;
   margin: 0 auto;
 }
 
@@ -283,6 +283,20 @@ h1, h2, h3 {
     height: auto;
     border-width: 3px;
     border-radius: 15px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .menu,
+  .services,
+  .studies,
+  .contacts {
+    display: none;
+  }
+  .about__advantages {
+    flex-direction: column;
+  }
+  .main-content__actions {
+    flex-direction: column;
   }
 }
 
