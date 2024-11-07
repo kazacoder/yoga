@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Railway, sans-serif;
+    font-family: Raleway, sans-serif;
     //background: yellow;
 }
 
@@ -26,7 +26,7 @@ h1, h2, h3 {
 .btn {
     cursor: pointer;
     font-size: 18px;
-    font-family: RailwayBold, sans-serif;
+    font-family: RalewayBold, sans-serif;
     color: rgb(63, 62, 62);
     padding: 21px 21px 22px 21px;
     background-color: #f4deff;
@@ -86,7 +86,7 @@ h1, h2, h3 {
     & a {
         text-decoration: none;
         font-size: 18px;
-        font-family: RailwayLight, sans-serif;
+        font-family: RalewayLight, sans-serif;
         color: rgb(63, 62, 62);
     }
 }
@@ -104,7 +104,7 @@ h1, h2, h3 {
     }
 
     &__title {
-        font-family: RailwayLight, sans-serif;
+        font-family: RalewayLight, sans-serif;
         font-size: 54px;
         line-height: 1.15;
 
@@ -234,13 +234,13 @@ h1, h2, h3 {
 
         &__name {
             font-size: 20px;
-            font-family: RailwayLight, sans-serif;
+            font-family: RalewayLight, sans-serif;
             color: rgb(63, 62, 62);
             margin-top: 12px;
         }
 
         &__experience {
-            font-family: RailwayMedium, sans-serif;
+            font-family: RalewayMedium, sans-serif;
             font-size: 14px;
         }
 
@@ -289,7 +289,7 @@ h1, h2, h3 {
 
     &__title {
         font-size: 25px;
-        font-family: 'RailwayLight', sans-serif;
+        font-family: 'RalewayLight', sans-serif;
         color: rgb(63, 62, 62);
     }
 }
@@ -403,6 +403,16 @@ h1, h2, h3 {
         display: flex;
         flex-wrap: wrap;
     }
+
+    &__coordinates {
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+    }
+
+    &__map {
+       max-width: 696px;
+        height: 373px;
+    }
 }
 
 
@@ -440,7 +450,7 @@ h1, h2, h3 {
         border-radius: 35px;
         box-sizing: border-box;
         font-size: 18px;
-        font-family: RailwayMedium, sans-serif;
+        font-family: RalewayMedium, sans-serif;
         color: rgb(63, 62, 62);
         padding: 22px 26px 21px 26px;
 
@@ -450,7 +460,75 @@ h1, h2, h3 {
     &__btn {
         width: 347px;
     }
+
 }
+
+.contacts__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    border-radius: 0 5px 5px 0;
+    background-color: #f4deff;
+  text-align: left;
+    & .contacts-item {
+      width: 150px;
+      //border: 1px solid black;
+        padding-bottom: 32px;
+        padding-top: 32px;
+
+      &__title {
+          font-size: 18px;
+          font-family: RalewayMedium, sans-serif;
+          color: rgb(63, 62, 62);
+          margin-bottom: 12px;
+
+      }
+
+      &__text {
+              font-size: 18px;
+              font-family: RalewayLight, sans-serif;
+              color: rgb(63, 62, 62);
+              line-height: 1.111;
+      }
+        &__socials {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+        &__social{
+
+        }
+      &.socials {
+          text-align: center;
+      }
+    }
+
+}
+
+.footer {
+    &__container {
+        padding-top: 66px;
+        padding-bottom: 80px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 32px
+    }
+
+
+
+    &__text {
+        font-size: 18px;
+        font-family: RalewayLight, sans-serif;
+        color: rgb(143, 127, 151);
+    }
+    & .rights {
+        color: rgb(180, 179, 176);
+    }
+
+}
+
 
 // Slick slider styles override
 
@@ -502,6 +580,32 @@ h1, h2, h3 {
     color: rgb(202, 130, 237);
 }
 
+
+@media screen and (max-width: 1191px) {
+    .contacts {
+        &__coordinates {
+            border: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        &__items {
+            border-radius: 10px;
+        }
+        &__block {
+            gap: 15px;
+            justify-content: center;
+        }
+        &__map {
+            height: 320px;
+
+        }
+
+        &__map iframe {
+            border-radius: 10px;
+        }
+    }
+}
 
 @media screen and (max-width: 1024px) {
     .about__container {
@@ -570,9 +674,6 @@ h1, h2, h3 {
 }
 
 @media screen and (max-width: 650px) {
-    .contacts__map {
-        display: none;
-    }
 
     .common-title {
         font-size: 40px;
@@ -638,6 +739,18 @@ h1, h2, h3 {
 
 }
 
+@media screen and (max-width: 500px) {
+    .contacts__items {
+        text-align: center;
+        padding-bottom: 24px;
+        padding-top: 24px;
+
+        & .contacts-item {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+    }
+}
 @media screen and (max-width: 424px) {
     .registration {
 
