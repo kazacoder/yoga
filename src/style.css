@@ -176,6 +176,7 @@ h1, h2, h3 {
   grid-column-end: 3;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .about .about-advantage {
   width: 204px;
@@ -220,7 +221,7 @@ h1, h2, h3 {
 }
 .teachers .teacher__name {
   font-size: 20px;
-  font-family: RalewayLight, sans-serif;
+  font-family: RailwayLight, sans-serif;
   color: rgb(63, 62, 62);
   margin-top: 12px;
 }
@@ -240,8 +241,8 @@ h1, h2, h3 {
   text-align: center;
 }
 .services__items {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 54px;
+  margin-bottom: 62px;
   display: flex;
   justify-content: center;
   gap: 42px;
@@ -254,7 +255,7 @@ h1, h2, h3 {
 .service-item {
   display: flex;
   flex-direction: column;
-  gap: 17px;
+  gap: 10px;
 }
 .service-item__image {
   width: 268px;
@@ -266,7 +267,7 @@ h1, h2, h3 {
 }
 .service-item__title {
   font-size: 25px;
-  font-family: RalewayLight, sans-serif;
+  font-family: "RailwayLight", sans-serif;
   color: rgb(63, 62, 62);
 }
 
@@ -307,6 +308,16 @@ h1, h2, h3 {
   transform: rotate(-135deg);
 }
 
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  font-size: 8px;
+  color: rgb(202, 130, 237);
+}
+
+.slick-dots li button:before {
+  color: rgb(202, 130, 237);
+}
+
 @media screen and (max-width: 1024px) {
   .about__container {
     display: flex;
@@ -323,14 +334,29 @@ h1, h2, h3 {
     border-radius: 15px;
   }
 }
+@media screen and (max-width: 1023px) {
+  .main-content__image {
+    display: none;
+  }
+}
 @media screen and (max-width: 800px) {
   .menu,
   .studies,
   .contacts {
     display: none;
   }
-  .about__advantages {
-    flex-direction: column;
+  .about .about-advantage {
+    width: 160px;
+  }
+  .main-content__actions {
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  .menu,
+  .studies,
+  .contacts {
+    display: none;
   }
   .main-content__actions {
     display: none;
