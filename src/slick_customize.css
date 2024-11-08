@@ -1,0 +1,48 @@
+.slick-slide {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.slick-list {
+  max-width: 88%;
+  margin: 0 auto;
+}
+
+.slick-arrow {
+  width: 22px;
+  height: 22px;
+  top: 110px;
+  border-right: 2px solid #cccccc;
+  border-top: 2px solid #cccccc;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+}
+
+.slick-next.slick-arrow {
+  right: 5px;
+}
+
+.slick-prev.slick-arrow {
+  left: 5px;
+  z-index: 1;
+}
+
+.slick-arrow::before {
+  content: "";
+}
+
+.slick-arrow.slick-prev {
+  transform: rotate(-135deg);
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  font-size: 8px;
+  color: rgb(202, 130, 237);
+}
+
+.slick-dots li button:before {
+  color: rgb(202, 130, 237);
+}
+
+/*# sourceMappingURL=slick_customize.css.map */

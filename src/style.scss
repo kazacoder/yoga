@@ -1,4 +1,5 @@
 @import "fonts";
+@import "slick_customize";
 
 * {
     margin: 0;
@@ -42,8 +43,8 @@ h1, h2, h3 {
         width: 240px;
     }
 
-    &.btn_transparent {
-        background-color: transparent;
+    &.btn_white {
+        background-color: white;
     }
 }
 
@@ -133,6 +134,15 @@ h1, h2, h3 {
         top: 4px;
         z-index: 0;
     }
+}
+
+.background-wrapper {
+    background-image:
+            url('../images/background_1_crop.png'),
+            url('../images/background_2.png'),
+            url('../images/background_3.png');
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: left top, right 57%, left bottom;
 }
 
 
@@ -320,7 +330,7 @@ h1, h2, h3 {
     grid-template-columns: auto auto;
 
     &__info {
-        width: 473px;
+        width: 485px;
         display: flex;
         flex-direction: column;
         gap: 50px;
@@ -401,7 +411,7 @@ h1, h2, h3 {
 
     &__block {
         display: flex;
-        flex-wrap: wrap;
+        //flex-wrap: wrap;
     }
 
     &__coordinates {
@@ -410,7 +420,7 @@ h1, h2, h3 {
     }
 
     &__map {
-       max-width: 696px;
+        max-width: 707px;
         height: 373px;
     }
 }
@@ -424,6 +434,7 @@ h1, h2, h3 {
     flex-direction: column;
     width: 472px;
     padding-bottom: 73px;
+    background-color: white;
 
     &__title {
         font-size: 20px;
@@ -466,42 +477,49 @@ h1, h2, h3 {
 .contacts__items {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 44px;
     justify-content: center;
     border-radius: 0 5px 5px 0;
     background-color: #f4deff;
-  text-align: left;
+    text-align: left;
+    padding-left: 30px;
+    padding-right:30px;
+
+
     & .contacts-item {
-      width: 150px;
-      //border: 1px solid black;
+        max-width: 150px;
+        //border: 1px solid black;
         padding-bottom: 32px;
         padding-top: 32px;
 
-      &__title {
-          font-size: 18px;
-          font-family: RalewayMedium, sans-serif;
-          color: rgb(63, 62, 62);
-          margin-bottom: 12px;
+        &__title {
+            font-size: 18px;
+            font-family: RalewayMedium, sans-serif;
+            color: rgb(63, 62, 62);
+            margin-bottom: 12px;
 
-      }
+        }
 
-      &__text {
-              font-size: 18px;
-              font-family: RalewayLight, sans-serif;
-              color: rgb(63, 62, 62);
-              line-height: 1.111;
-      }
+        &__text {
+            font-size: 18px;
+            font-family: RalewayLight, sans-serif;
+            color: rgb(63, 62, 62);
+            line-height: 1.111;
+        }
+
         &__socials {
             display: flex;
             justify-content: center;
             gap: 12px;
         }
-        &__social{
+
+        &__social {
 
         }
-      &.socials {
-          text-align: center;
-      }
+
+        &.socials {
+            text-align: center;
+        }
     }
 
 }
@@ -517,12 +535,12 @@ h1, h2, h3 {
     }
 
 
-
     &__text {
         font-size: 18px;
         font-family: RalewayLight, sans-serif;
         color: rgb(143, 127, 151);
     }
+
     & .rights {
         color: rgb(180, 179, 176);
     }
@@ -530,236 +548,4 @@ h1, h2, h3 {
 }
 
 
-// Slick slider styles override
-
-.slick-slide {
-    display: flex !important;
-    justify-content: center !important;
-}
-
-.slick-list {
-    max-width: 88%;
-    margin: 0 auto;
-}
-
-.slick-arrow {
-    width: 22px;
-    height: 22px;
-    top: 110px;
-    border-right: 2px solid #cccccc;
-    border-top: 2px solid #cccccc;
-    box-sizing: border-box;
-    transform: rotate(45deg);
-}
-
-.slick-next.slick-arrow {
-    right: 5px;
-}
-
-.slick-prev.slick-arrow {
-    left: 5px;
-    z-index: 1;
-}
-
-.slick-arrow::before {
-    content: '';
-}
-
-.slick-arrow.slick-prev {
-    transform: rotate(-135deg);
-}
-
-.slick-dots li.slick-active button:before {
-    opacity: .75;
-    font-size: 8px;
-    color: rgb(202, 130, 237);
-}
-
-
-.slick-dots li button:before {
-    color: rgb(202, 130, 237);
-}
-
-
-@media screen and (max-width: 1191px) {
-    .contacts {
-        &__coordinates {
-            border: none;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        &__items {
-            border-radius: 10px;
-        }
-        &__block {
-            gap: 15px;
-            justify-content: center;
-        }
-        &__map {
-            height: 320px;
-
-        }
-
-        &__map iframe {
-            border-radius: 10px;
-        }
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .about__container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .about__video {
-        max-width: 100%;
-        height: auto;
-
-        & video {
-            max-width: 100%;
-            height: auto;
-            border-width: 3px;
-            border-radius: 15px;
-        }
-    }
-
-
-}
-
-@media screen and (max-width: 1023px) {
-    .studies {
-        &__items {
-            gap: 50px;
-        }
-    }
-
-    .studio-item {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-
-
-        & .position-left {
-            order: unset;
-        }
-
-    }
-
-    .main-content {
-        &__image {
-            display: none;
-        }
-    }
-}
-
-
-@media screen and (max-width: 800px) {
-    .menu,
-             {
-        display: none;
-    }
-
-    .about {
-        & .about-advantage {
-            width: 160px;
-        }
-    }
-
-
-    .main-content__actions {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 650px) {
-
-    .common-title {
-        font-size: 40px;
-    }
-
-    .services {
-        &__btn {
-            width: 260px;
-            font-size: 16px;
-        }
-    }
-
-    .studio-item {
-
-        &__info {
-
-        }
-
-        &__title {
-
-        }
-
-        &__text {
-
-        }
-
-        &__image {
-            width: unset;
-            height: unset;
-
-            & img {
-                position: unset;
-                max-width: 100%;
-                max-height: 100%;
-                margin-bottom: -4px;
-            }
-
-        }
-
-    }
-
-    .studies__advantages {
-        gap: 10px;
-        margin-top: 50px;
-
-    }
-
-    .studio-advantage {
-        width: 170px;
-
-        &__image {
-            height: 83px;
-            display: flex;
-            justify-content: center;
-            align-items: end;
-            margin-bottom: 25px;
-        }
-
-        &__text {
-            font-size: 15px;
-        }
-    }
-
-}
-
-@media screen and (max-width: 500px) {
-    .contacts__items {
-        text-align: center;
-        padding-bottom: 24px;
-        padding-top: 24px;
-
-        & .contacts-item {
-            padding-bottom: 0;
-            padding-top: 0;
-        }
-    }
-}
-@media screen and (max-width: 424px) {
-    .registration {
-
-        & input {
-            width: 261px;
-        }
-
-        &__btn {
-            width: 261px;
-        }
-    }
-}
+@import "adaptive";
