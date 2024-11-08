@@ -14,7 +14,6 @@ $(document).ready(function () {
                     slidesToShow: 2,
                     slidesToScroll: 2,
                 }
-
             },
             {
                 breakpoint: 992,
@@ -30,7 +29,6 @@ $(document).ready(function () {
                     dots: true,
                     arrows: false,
                 }
-
             },
 
             {
@@ -50,7 +48,44 @@ $(document).ready(function () {
     });
 
 
-    // let video = document.getElementById('video')
+    $('#about_link').on('click', function (e) {
+        e.preventDefault();
+        $('#about')[0].scrollIntoView({behavior: 'smooth'});
+    })
+    $('#teachers_link').on('click', function (e) {
+        e.preventDefault();
+        $('#teachers')[0].scrollIntoView({behavior: 'smooth'});
+    })
+    $('#services_link, #services_btn').on('click', function (e) {
+        e.preventDefault();
+        $('#services')[0].scrollIntoView({behavior: 'smooth'});
+    })
+    $('#studies_link').on('click', function (e) {
+        e.preventDefault();
+        $('#studies')[0].scrollIntoView({behavior: 'smooth'});
+    })
+    $('#contacts_link, #contacts_btn').on('click', function (e) {
+        e.preventDefault();
+        $('#contacts')[0].scrollIntoView({behavior: 'smooth'});
+    })
+
+
+
+    $('#burger').on('click', function () {
+        console.log('clicked');
+        document.getElementById('menu').classList.add('open')
+        // document.getElementById('burger').classList.add('pressed')
+        // document.getElementById('menu__close').classList.add('rotated')
+    })
+
+    $('#menu').on( 'click', function () {
+        document.getElementById('menu').classList.remove('open')
+        document.getElementById('burger').classList.remove('pressed')
+        document.getElementById('menu__close').classList.remove('rotated')
+    })
+
+
+    let video = document.getElementById('video')
     // let storedTimestamp = 0;
     //
     //
@@ -62,6 +97,9 @@ $(document).ready(function () {
     // video.addEventListener('play', function () {
     //     video.currentTime = storedTimestamp
     // });
+    video.addEventListener('ended', function () {
+        video.load()
+    });
 
 })
 

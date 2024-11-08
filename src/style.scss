@@ -53,6 +53,34 @@ h1, h2, h3 {
     color: rgb(63, 62, 62);
 }
 
+
+.burger-menu {
+    display: none;
+    width: 40px;
+    height: 22px;
+    flex-direction: column;
+    gap: 8px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &__line{
+        width: 40px;
+        height: 2px;
+        border: 1px solid rgb(63, 62, 62);
+        box-sizing: border-box;
+    }
+
+    &.pressed {
+        padding-top: 8px;
+        transform: rotate(45deg);
+        gap: 0;
+    }
+}
+
+
+
+
 .main {
     background-image: url("../images/bg_main.png");
     background-repeat: no-repeat;
@@ -73,6 +101,12 @@ h1, h2, h3 {
     z-index: 1;
     position: relative;
 
+}
+
+.menu.open {
+    display: flex;
+    opacity: 1;
+    pointer-events: unset;
 }
 
 .menu__list {
@@ -287,6 +321,10 @@ h1, h2, h3 {
     flex-direction: column;
     gap: 10px;
 
+    &:hover &__image {
+        transform: scale(1.1);
+    }
+
     &__image {
         width: 268px;
         height: 300px;
@@ -294,6 +332,7 @@ h1, h2, h3 {
         border: 5px solid rgb(244, 222, 255);
         border-radius: 20px;
         background-size: cover;
+        transition: transform 0.3s ease-in-out;
     }
 
     &__title {
@@ -486,7 +525,6 @@ h1, h2, h3 {
 
     & .contacts-item {
         max-width: 150px;
-        //border: 1px solid black;
         padding-bottom: 32px;
         padding-top: 32px;
 
@@ -509,10 +547,14 @@ h1, h2, h3 {
             display: flex;
             justify-content: center;
             gap: 12px;
+
         }
 
         &__social {
 
+            &:hover {
+                opacity: .6;
+            }
         }
 
         &.socials {
@@ -536,7 +578,10 @@ h1, h2, h3 {
     &__text {
         font-size: 18px;
         font-family: RalewayLight, sans-serif;
-        color: rgb(143, 127, 151);
+        & a {
+            text-decoration: none;
+            color: rgb(143, 127, 151);
+        }
     }
 
     & .rights {
