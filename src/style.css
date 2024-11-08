@@ -157,7 +157,7 @@ h1, h2, h3 {
   gap: 108px;
   align-items: end;
   padding-top: 6px;
-  z-index: 1;
+  z-index: 3;
   position: relative;
 }
 
