@@ -8,7 +8,6 @@
 
 body {
     font-family: Raleway, sans-serif;
-    //background: yellow;
 }
 
 h1, h2, h3 {
@@ -138,11 +137,11 @@ h1, h2, h3 {
 
 .background-wrapper {
     background-image:
-            url('../images/background_1_crop.png'),
-            url('../images/background_2_crop.png'),
+            url('../images/background_1_spaced.png'),
+            url('../images/background_2_spaced.png'),
             url('../images/background_3.png');
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position: left top, right 1540px, left bottom;
+    background-repeat: no-repeat, repeat-y, no-repeat;
+    background-position: left top, right 1525px, left bottom;
 }
 
 
@@ -411,7 +410,6 @@ h1, h2, h3 {
 
     &__block {
         display: flex;
-        //flex-wrap: wrap;
     }
 
     &__coordinates {

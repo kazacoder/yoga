@@ -190,9 +190,9 @@ h1, h2, h3 {
 }
 
 .background-wrapper {
-  background-image: url("../images/background_1_crop.png"), url("../images/background_2_crop.png"), url("../images/background_3.png");
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: left top, right 1540px, left bottom;
+  background-image: url("../images/background_1_spaced.png"), url("../images/background_2_spaced.png"), url("../images/background_3.png");
+  background-repeat: no-repeat, repeat-y, no-repeat;
+  background-position: left top, right 1525px, left bottom;
 }
 
 .about__container {
@@ -514,6 +514,13 @@ h1, h2, h3 {
   color: rgb(180, 179, 176);
 }
 
+@media screen and (max-width: 1227px) {
+  .background-wrapper {
+    background-image: url("../images/background_1_spaced.png"), url("../images/background_2_spaced.png");
+    background-repeat: repeat-y, repeat-y;
+    background-position: left top, right 1525px;
+  }
+}
 @media screen and (max-width: 1205px) {
   .contacts__items {
     gap: 24px;
@@ -628,9 +635,10 @@ h1, h2, h3 {
     resize: both;
   }
   .main-content {
-    padding-bottom: 100px;
+    padding-bottom: 180px;
   }
   .main-content__info {
+    margin-top: 50px;
     text-align: center;
   }
   .main-content__title {
