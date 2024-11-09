@@ -69,19 +69,20 @@ $(document).ready(function () {
         $('#contacts')[0].scrollIntoView({behavior: 'smooth'});
     })
 
+    const menu = $('#menu')
+    const menuClose = $('#menu__close')
+    const burger = $('#burger')
 
-
-    $('#burger').on('click', function () {
-        console.log('clicked');
-        document.getElementById('menu').classList.add('open')
-        // document.getElementById('burger').classList.add('pressed')
-        // document.getElementById('menu__close').classList.add('rotated')
+    burger.on('click', function () {
+        menu.addClass('open');
+        burger.addClass('pressed')
+        menuClose.addClass('rotated')
     })
 
-    $('#menu').on( 'click', function () {
-        document.getElementById('menu').classList.remove('open')
-        document.getElementById('burger').classList.remove('pressed')
-        document.getElementById('menu__close').classList.remove('rotated')
+    menu.on( 'click', function () {
+        menu.removeClass('open')
+        menuClose.removeClass('rotated')
+        burger.removeClass('pressed')
     })
 
 
