@@ -102,6 +102,27 @@ $(document).ready(function () {
         video.load()
     });
 
+    $('form').on('submit', function (e) {
+
+
+
+        e.preventDefault();
+        $.ajax({
+            method: 'POST',
+            url: 'https://testologia.ru/checkout',
+            data: {
+                name: $('#name').val()
+            }
+        }).done(function (data) {
+            if (data.success) {
+                $('.registration__form form').css('opacity', 0);
+                $('.registration__success').css({'opacity': 1, 'z-index': 1});
+            } else {
+                console.log(data)
+            }
+        })
+    })
+
 })
 
 

@@ -128,12 +128,6 @@
         }
 
     }
-
-    .main-content {
-        &__image {
-
-        }
-    }
 }
 
 
@@ -178,6 +172,7 @@
         }
 
         &__item a {
+            font-family: RalewayMedium, sans-serif;
             font-size: 24px;
             letter-spacing: 0.45px;
             color: #FFFFFF;
@@ -202,9 +197,14 @@
         }
     }
 
+    .contacts__items {
+        gap: 15px;
+        padding-left: 0;
+        padding-right: 0;
+    }
 
-    .main-content__actions {
-
+    .contacts-item {
+        width: 149px
     }
 }
 
@@ -255,18 +255,6 @@
 
     .studio-item {
 
-        &__info {
-
-        }
-
-        &__title {
-
-        }
-
-        &__text {
-
-        }
-
         &__image {
             width: unset;
             height: unset;
@@ -277,15 +265,12 @@
                 max-height: 100%;
                 margin-bottom: -4px;
             }
-
         }
-
     }
 
     .studies__advantages {
         gap: 10px;
         margin-top: 50px;
-
     }
 
     .studio-advantage {
@@ -303,7 +288,13 @@
             font-size: 15px;
         }
     }
+    .contacts__container {
+            padding: 0 15px;
+        }
 
+    .studies__container {
+            padding: 0 15px;
+        }
 }
 
 
@@ -320,6 +311,10 @@
             padding-bottom: 0;
             padding-top: 0;
         }
+    }
+
+    .registration {
+        min-width: unset;
     }
 }
 
