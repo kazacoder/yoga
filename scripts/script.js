@@ -127,16 +127,19 @@ $(document).ready(function () {
         let phone = $(this).find('#phone');
         name.removeClass('invalid');
         phone.removeClass('invalid');
-        $(this).find('.registration__invalid-feedback').css('visibility', 'hidden');
+        $(this).find('.registration__invalid-feedback')
+            .css('visibility', 'hidden');
         let hasError = false;
 
         if (!name.val()) {
-            name.addClass('invalid').next('span').css('visibility', 'visible');
+            name.addClass('invalid').next('span')
+                .css('visibility', 'visible');
             hasError = true;
         }
 
         if (!phonePattern.test(phone.val())) {
-            phone.addClass('invalid').next('span').css('visibility', 'visible');
+            phone.addClass('invalid').next('span')
+                .css('visibility', 'visible');
             hasError = true;
         }
 
@@ -152,6 +155,8 @@ $(document).ready(function () {
                     $('.registration__form form').css('opacity', 0);
                     $('.registration__success').css({'opacity': 1, 'z-index': 1});
                 } else {
+                    errorPopup.find('.error-popup__text')
+                        .text('Возникла ошибка при записи на урок, позвоните нам и запишитесь')
                     errorPopup.css('display', 'flex');
                 }
             }).always(function () {
