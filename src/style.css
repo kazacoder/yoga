@@ -707,6 +707,7 @@ h1, h2, h3 {
   border-collapse: separate;
   border-spacing: 0;
   background-color: white;
+  margin-right: -1px;
 }
 
 .schedule th, td {
