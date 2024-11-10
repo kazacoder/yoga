@@ -23,3 +23,15 @@ gulp.task('assemble_project', (cb) => {
 
     cb();
 })
+
+
+gulp.task('animate', (cb) => {
+    gulp.src('./node_modules/animate.css/animate.min.css').
+        pipe(gulp.dest('./dist/lib/animate'));
+
+    // gulp.src('./node_modules/slick-carousel/slick/slick.css').
+    //     pipe(gulp.dest('./dist/lib/slick'));
+
+
+    cb();
+})
