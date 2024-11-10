@@ -499,7 +499,7 @@ h1, h2, h3 {
 .registration__form form {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 14px;
   align-items: center;
   transition: opacity 0.5s ease-in-out;
 }
@@ -513,6 +513,17 @@ h1, h2, h3 {
   font-family: RalewayMedium, sans-serif;
   color: rgb(63, 62, 62);
   padding: 22px 26px 21px 26px;
+}
+.registration input.invalid {
+  border-color: darkred;
+}
+.registration__invalid-feedback {
+  display: inline-block;
+  color: darkred;
+  font-size: 16px;
+  line-height: 1;
+  visibility: hidden;
+  pointer-events: none;
 }
 .registration__btn {
   width: 347px;

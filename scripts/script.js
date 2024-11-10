@@ -1,15 +1,20 @@
 $(document).ready(function () {
+    // Wow js init
     let wow = new WOW(
         {
-            boxClass:     'wow',      // default
+            boxClass: 'wow',      // default
             animateClass: 'animate__animated', // default
-            offset:       0,          // default
-            mobile:       true,       // default
-            live:         true        // default
+            offset: 0,          // default
+            mobile: true,       // default
+            live: true        // default
         }
     )
     wow.init();
 
+    // Input Mask applying for phone
+    $('#phone').inputmask({"mask": "+7 (999) 999-9999"});
+
+    // Slick carousel init and set up
     $('.teachers__carousel').slick({
         dots: false,
         infinite: true,
@@ -41,7 +46,6 @@ $(document).ready(function () {
                     arrows: false,
                 }
             },
-
             {
                 breakpoint: 375,
                 settings: {
@@ -55,10 +59,9 @@ $(document).ready(function () {
                 }
             },
         ],
-
     });
 
-
+    // add Event listeners to menu / buttons
     $('#about_link').on('click', function (e) {
         e.preventDefault();
         $('#about')[0].scrollIntoView({behavior: 'smooth'});
@@ -80,6 +83,13 @@ $(document).ready(function () {
         $('#contacts')[0].scrollIntoView({behavior: 'smooth'});
     })
 
+    $('#schedule').on('click', function (e) {
+        errorPopup.find('.error-popup__text').text('Здесь скоро будет расписание');
+        errorPopup.css('display', 'flex');
+    })
+
+
+    // set up "Burger" menu
     const menu = $('#menu')
     const menuClose = $('#menu__close')
     const burger = $('#burger')
@@ -97,46 +107,84 @@ $(document).ready(function () {
     })
 
 
+    // reload video after ending - the poster will be shown again
     let video = document.getElementById('video')
-    // let storedTimestamp = 0;
-    //
-    //
-    // video.addEventListener('pause', () => {
-    //     storedTimestamp = video.currentTime
-    //     video.load()
-    // });
-    //
-    // video.addEventListener('play', function () {
-    //     video.currentTime = storedTimestamp
-    // });
+
     video.addEventListener('ended', function () {
         video.load()
     });
 
-    const errorPopup = $('.error-popup-wrap')
 
-    $('form').on('submit', function (e) {
+    // Form validation and sending and handling
+    const errorPopup = $('.error-popup-wrap')
+    const form = $('form')
+    const phonePattern = /\+7 \(\d{3}\) \d{3}-\d{4}/;
+
+    form.on('submit', function (e) {
         e.preventDefault();
-        $.ajax({
-            method: 'POST',
-            url: 'https://testologia.ru/checkout',
-            data: {
-                name: $('#name').val()
-            }
-        }).done(function (data) {
-            if (data.success) {
-                $('.registration__form form').css('opacity', 0);
-                $('.registration__success').css({'opacity': 1, 'z-index': 1});
-            } else {
-                errorPopup.css('display', 'flex');
-            }
-        })
+
+        let name = $(this).find('#name');
+        let phone = $(this).find('#phone');
+        name.removeClass('invalid');
+        phone.removeClass('invalid');
+        $(this).find('.registration__invalid-feedback').css('visibility', 'hidden');
+        let hasError = false;
+
+        if (!name.val()) {
+            name.addClass('invalid').next('span').css('visibility', 'visible');
+            hasError = true;
+        }
+
+        if (!phonePattern.test(phone.val())) {
+            phone.addClass('invalid').next('span').css('visibility', 'visible');
+            hasError = true;
+        }
+
+        if (!hasError) {
+            $.ajax({
+                method: 'POST',
+                url: 'https://testologia.ru/checkout',
+                data: {
+                    name: $('#name').val()
+                }
+            }).done(function (data) {
+                if (data.success) {
+                    $('.registration__form form').css('opacity', 0);
+                    $('.registration__success').css({'opacity': 1, 'z-index': 1});
+                } else {
+                    errorPopup.css('display', 'flex');
+                }
+            }).always(function () {
+                e.target.reset()
+            })
+        }
     })
 
+    // check validity inputs during typing
+    const inputs = form.find('input');
+
+    inputs.on('input', function () {
+        if (this.id === 'phone') {
+            if (phonePattern.test(this.value)) {
+                $(this).removeClass('invalid').next('.registration__invalid-feedback').css('visibility', 'hidden');
+            }
+        } else if (this.value) {
+            $(this).removeClass('invalid').next('.registration__invalid-feedback').css('visibility', 'hidden');
+        }
+    })
+
+
+    //close popup "error-popup" by click outside the "error-popup" block or close button
     errorPopup.on('click', function (event) {
         if (event.target.id !== 'error-popup') {
             $(this).hide()
         }
+    })
+
+    // show form then again registration__success clicked
+    $('.registration__success').on('click', function (event) {
+        $('.registration__form form').css('opacity', 1);
+        $('.registration__success').css({'opacity': 0, 'z-index': -1});
     })
 
 })

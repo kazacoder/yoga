@@ -28,10 +28,11 @@ gulp.task('assemble_project', (cb) => {
 gulp.task('animate', (cb) => {
     gulp.src('./node_modules/animate.css/animate.min.css').
         pipe(gulp.dest('./dist/lib/animate'));
+    cb();
+})
 
-    // gulp.src('./node_modules/slick-carousel/slick/slick.css').
-    //     pipe(gulp.dest('./dist/lib/slick'));
-
-
+gulp.task('inputmask', (cb) => {
+    gulp.src('./node_modules/inputmask/dist/jquery.inputmask.min.js').
+        pipe(gulp.dest('./dist/lib/inputmask'));
     cb();
 })
