@@ -84,8 +84,7 @@ $(document).ready(function () {
     })
 
     $('#schedule').on('click', function (e) {
-        errorPopup.find('.error-popup__text').text('Здесь скоро будет расписание');
-        errorPopup.css('display', 'flex');
+       $('#schedule-popup').show();
     })
 
 
@@ -190,6 +189,14 @@ $(document).ready(function () {
     $('.registration__success').on('click', function (event) {
         $('.registration__form form').css('opacity', 1);
         $('.registration__success').css({'opacity': 0, 'z-index': -1});
+    })
+
+    //close popup "error-popup" by click outside the "error-popup" block or close button
+    $('#schedule-popup').on('click', function (event) {
+        console.log(event.target)
+        if (event.target.id !== 'schedule-table') {
+            $(this).hide()
+        }
     })
 
 })
