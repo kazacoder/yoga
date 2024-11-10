@@ -79,7 +79,7 @@ $(document).ready(function () {
         menuClose.addClass('rotated')
     })
 
-    menu.on( 'click', function () {
+    menu.on('click', function () {
         menu.removeClass('open')
         menuClose.removeClass('rotated')
         burger.removeClass('pressed')
@@ -102,10 +102,9 @@ $(document).ready(function () {
         video.load()
     });
 
+    const errorPopup = $('.error-popup-wrap')
+
     $('form').on('submit', function (e) {
-
-
-
         e.preventDefault();
         $.ajax({
             method: 'POST',
@@ -118,9 +117,15 @@ $(document).ready(function () {
                 $('.registration__form form').css('opacity', 0);
                 $('.registration__success').css({'opacity': 1, 'z-index': 1});
             } else {
-                console.log(data)
+                errorPopup.css('display', 'flex');
             }
         })
+    })
+
+    errorPopup.on('click', function (event) {
+        if (event.target.id !== 'error-popup') {
+            $(this).hide()
+        }
     })
 
 })

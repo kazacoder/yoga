@@ -637,4 +637,61 @@ h1, h2, h3 {
 }
 
 
+.error-popup {
+    &-wrap {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        position: fixed;
+        background: #0b0b0bc9;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    position: relative;
+    background: rgb(244, 222, 255);;
+    color: rgb(63, 62, 62);
+    padding: 20px;
+    width: auto;
+    max-width: 400px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 20px;
+
+    &__close {
+        overflow: visible;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        -webkit-appearance: none;
+        display: block;
+        outline: none;
+        z-index: 1046;
+        box-shadow: none;
+        touch-action: manipulation;
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-decoration: none;
+        text-align: center;
+        opacity: 0.65;
+        padding: 0 0 18px 10px;
+        color: rgb(63, 62, 62);
+        font-style: normal;
+        font-size: 28px;
+        font-family: Arial, Baskerville, monospace;
+    }
+}
+
+
+
+
 @import "adaptive";
