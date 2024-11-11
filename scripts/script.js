@@ -84,7 +84,7 @@ $(document).ready(function () {
     })
 
     $('#schedule').on('click', function (e) {
-       $('#schedule-popup').show();
+       $('#schedule-popup').css({'opacity': 1, 'pointer-events': 'auto'});
     })
 
 
@@ -193,9 +193,11 @@ $(document).ready(function () {
 
     //close popup "error-popup" by click outside the "error-popup" block or close button
     $('#schedule-popup').on('click', function (event) {
-        console.log(event.target)
-        if (event.target.id !== 'schedule-table') {
-            $(this).hide()
+        event.stopPropagation()
+        console.log($(event.target).parent().find('.close_schedule'))
+        console.log(event.target.id)
+        if ($(event.target).parent().find('.close_schedule').length || event.target.id === 'btn_close_schedule') {
+            $(this).css({'opacity': 0, 'pointer-events': 'none'})
         }
     })
 
