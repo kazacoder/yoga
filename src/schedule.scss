@@ -10,7 +10,7 @@
 //}
 
 
-.schedule-popup-wrap {
+.schedule {
     top: 0;
     left: 0;
     width: 100%;
@@ -20,9 +20,10 @@
     background: #0b0b0bc9;
     display: block;
     opacity: 0;
+    opacity: 1;
     justify-content: center;
     align-items: center;
-    pointer-events: none;
+    //pointer-events: none;
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -34,7 +35,12 @@
     box-sizing: border-box;
     position: relative;
     display: flex;
+    flex-direction: column;
     max-height: 100vh;
+}
+
+.labels {
+    align-self: start;
 }
 
 .wrapper {
@@ -86,7 +92,7 @@
     z-index: 3;
 }
 
-.schedule {
+.schedule__table {
     font-family: RalewayLight, sans-serif;
     font-size: 16px;
     border-collapse: separate;
@@ -94,7 +100,7 @@
     background-color: white;
 }
 
-.schedule th, td {
+.schedule__table th, td {
     border-top: 1px solid black;
     border-right: 1px solid black;
     padding: 10px 10px;
@@ -102,7 +108,7 @@
     background-color: white;
 }
 
-.schedule th {
+.schedule__table th {
     position: sticky;
     top: 0;
     z-index: 10;
@@ -110,7 +116,7 @@
     font-family: RalewayBold, sans-serif;
 }
 
-.schedule th:first-child, .schedule td:first-child {
+.schedule__table th:first-child, .schedule__table td:first-child {
     font-family: RalewayMedium, sans-serif;
     position: sticky;
     left: 0;
@@ -119,12 +125,12 @@
 }
 
 .cell-first-left {
-    font-family: RalewayBold, sans-serif!important;
-    z-index: 12!important;
+    font-family: RalewayBold, sans-serif !important;
+    z-index: 12 !important;
 }
 
 .last-column {
-    border-right: none!important;
+    border-right: none !important;
 }
 
 .first-row {
@@ -133,4 +139,52 @@
 
 .second-row {
     border-top: none;
+}
+
+
+.tabs {
+    position: relative; /* Относительное позиционирование */
+    display: flex;
+}
+
+.tab, .tab-title {
+    display: inline-block; /* Выстраиваем по горизонтали */
+}
+
+.tab input[type="radio"] {
+    display: none;
+}
+
+.tab-title {
+    position: relative;
+    top: 0;
+    background: #ccc; /* Цвет фона */
+    padding: 5px 10px; /* Поля вокруг текста */
+    border: 1px solid #666; /* Параметры рамки */
+    border-bottom: none; /* Снизу линию убираем */
+    margin: 0 9px;
+    font-size: 16px;
+
+    &.active {
+        background-color: white;
+        position: relative;
+        top: 1px;
+        z-index: 15
+    }
+}
+
+.tab-content {
+    display: none; /* Прячем вкладку */
+    max-height: 100vh;
+}
+
+.tab:checked .tab-title {
+    position: relative; /* Относительное позиционирование */
+    background: #fff; /* Цвет фона */
+    top: 1px; /* Сдвигаем вниз */
+    z-index: 1; /* Отображаем поверх содержимого */
+}
+
+.tab :checked ~ .tab-content {
+    display: flex; /* Показываем активную вкладку */
 }

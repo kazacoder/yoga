@@ -194,11 +194,14 @@ $(document).ready(function () {
     //close popup "error-popup" by click outside the "error-popup" block or close button
     $('#schedule-popup').on('click', function (event) {
         event.stopPropagation()
-        console.log($(event.target).parent().find('.close_schedule'))
-        console.log(event.target.id)
         if ($(event.target).parent().find('.close_schedule').length || event.target.id === 'btn_close_schedule') {
             $(this).css({'opacity': 0, 'pointer-events': 'none'})
         }
+    })
+
+    $('input[name="tab-group"]').on('click', function (e) {
+        $('.tab-title').removeClass('active');
+        $('label[for="'+this.id+'"]').addClass('active')
     })
 
 })
