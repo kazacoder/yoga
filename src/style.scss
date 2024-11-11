@@ -1,5 +1,6 @@
 @import "fonts";
 @import "slick_customize";
+$font-color-1: rgb(63, 62, 62);
 
 * {
     margin: 0;
@@ -30,7 +31,7 @@ h1, h2, h3 {
     cursor: pointer;
     font-size: 18px;
     font-family: RalewayBold, sans-serif;
-    color: rgb(63, 62, 62);
+    color: $font-color-1;
     padding: 21px 21px 22px 21px;
     background-color: #f4deff;
     border: 3px solid #f4deff;
@@ -53,7 +54,7 @@ h1, h2, h3 {
 .common-title {
     font-size: 55px;
     font-family: Celestina, sans-serif;
-    color: rgb(63, 62, 62);
+    color: $font-color-1;
 }
 
 
@@ -70,7 +71,7 @@ h1, h2, h3 {
     &__line{
         width: 40px;
         height: 2px;
-        border: 1px solid rgb(63, 62, 62);
+        border: 1px solid $font-color-1;
         box-sizing: border-box;
     }
 
@@ -142,7 +143,7 @@ h1, h2, h3 {
             text-decoration: none;
             font-size: 18px;
             font-family: RalewayLight, sans-serif;
-            color: rgb(63, 62, 62);
+            color: $font-color-1;
         }
     }
 }
@@ -172,7 +173,7 @@ h1, h2, h3 {
     &__text {
         margin-top: 50px;
         font-size: 20px;
-        color: rgb(63, 62, 62);
+        color: $font-color-1;
         line-height: 1.5;
         max-width: 435px;
     }
@@ -218,7 +219,7 @@ h1, h2, h3 {
 
     &__text {
         font-size: 18px;
-        color: rgb(63, 62, 62);
+        color: $font-color-1;
         line-height: 1.611;
     }
 
@@ -258,7 +259,7 @@ h1, h2, h3 {
 
         &__text {
             font-size: 18px;
-            color: rgb(63, 62, 62);
+            color: $font-color-1;
             line-height: 1.167;
         }
     }
@@ -276,7 +277,7 @@ h1, h2, h3 {
     &__text {
         margin: 60px auto 0 auto;
         font-size: 18px;
-        color: rgb(63, 62, 62);
+        color: $font-color-1;
         line-height: 1.611;
         max-width: 721px;
     }
@@ -300,7 +301,7 @@ h1, h2, h3 {
         &__name {
             font-size: 20px;
             font-family: RalewayLight, sans-serif;
-            color: rgb(63, 62, 62);
+            color: $font-color-1;
             margin-top: 12px;
         }
 
@@ -360,7 +361,7 @@ h1, h2, h3 {
     &__title {
         font-size: 25px;
         font-family: 'RalewayLight', sans-serif;
-        color: rgb(63, 62, 62);
+        color: $font-color-1;
     }
 }
 
@@ -399,12 +400,12 @@ h1, h2, h3 {
 
     &__title {
         font-size: 25px;
-        color: rgb(63, 62, 62);
+        color: $font-color-1;
     }
 
     &__text {
         font-size: 18px;
-        color: rgb(63, 62, 62);
+        color: $font-color-1;
         line-height: 1.755;
     }
 
@@ -499,7 +500,7 @@ h1, h2, h3 {
 
     &__title {
         font-size: 20px;
-        color: rgb(63, 62, 62);
+        color: $font-color-1;
         background-image: url("../images/logo_lotus_flower.png");
         background-repeat: no-repeat;
         background-position: center 5px;
@@ -528,7 +529,7 @@ h1, h2, h3 {
         box-sizing: border-box;
         font-size: 18px;
         font-family: RalewayMedium, sans-serif;
-        color: rgb(63, 62, 62);
+        color: $font-color-1;
         padding: 22px 26px 21px 26px;
         &.invalid {
             border-color: darkred;
@@ -564,7 +565,7 @@ h1, h2, h3 {
         font-family: RalewayMedium, sans-serif;
         font-size: 28px;
         line-height: 2.3;
-        color: rgb(63, 62, 62);
+        color: $font-color-1;
         padding: 15px;
     }
 
@@ -590,7 +591,7 @@ h1, h2, h3 {
         &__title {
             font-size: 18px;
             font-family: RalewayMedium, sans-serif;
-            color: rgb(63, 62, 62);
+            color: $font-color-1;
             margin-bottom: 12px;
 
         }
@@ -598,7 +599,7 @@ h1, h2, h3 {
         &__text {
             font-size: 18px;
             font-family: RalewayLight, sans-serif;
-            color: rgb(63, 62, 62);
+            color: $font-color-1;
             line-height: 1.111;
         }
 
@@ -666,7 +667,7 @@ h1, h2, h3 {
 
     position: relative;
     background: rgb(244, 222, 255);;
-    color: rgb(63, 62, 62);
+    color: $font-color-1;
     padding: 20px;
     width: auto;
     max-width: 400px;
@@ -697,7 +698,7 @@ h1, h2, h3 {
         text-align: center;
         opacity: 0.65;
         padding: 0 0 18px 10px;
-        color: rgb(63, 62, 62);
+        color: $font-color-1;
         font-style: normal;
         font-size: 28px;
         font-family: Arial, Baskerville, monospace;
