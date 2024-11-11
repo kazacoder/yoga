@@ -1,4 +1,4 @@
-.schedule {
+.schedule-popup-wrap {
   top: 0;
   left: 0;
   width: 100%;
@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.inner {
+.schedule__inner {
   overflow: hidden;
   background: rgb(244, 222, 255);
   padding: 20px;
@@ -27,7 +27,7 @@
   background: rgb(244, 222, 255);
 }
 
-.schedule-popup {
+.schedule__block {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,21 +40,21 @@
   margin: 20px;
 }
 
-.schedule {
+.schedule__table {
   font-size: 16px;
   border-collapse: separate;
   border-spacing: 0;
   background-color: white;
 }
 
-.schedule th, td {
+.schedule__table th, td {
   border-top: 1px solid black;
   border-right: 1px solid black;
   padding: 10px 10px;
   box-sizing: border-box;
 }
 
-.schedule th:first-child, .schedule td:first-child {
+.schedule__table th:first-child, .schedule__table td:first-child {
   position: sticky;
   left: 0;
   background-color: white;

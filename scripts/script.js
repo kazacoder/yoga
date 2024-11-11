@@ -83,9 +83,6 @@ $(document).ready(function () {
         $('#contacts')[0].scrollIntoView({behavior: 'smooth'});
     })
 
-    $('#schedule').on('click', function (e) {
-       $('#schedule-popup').css({'opacity': 1, 'pointer-events': 'auto'});
-    })
 
 
     // set up "Burger" menu
@@ -185,13 +182,21 @@ $(document).ready(function () {
         }
     })
 
-    // show form then again registration__success clicked
-    $('.registration__success').on('click', function (event) {
+    // show form then registration__success clicked again
+    $('.registration__success').on('click', function () {
         $('.registration__form form').css('opacity', 1);
         $('.registration__success').css({'opacity': 0, 'z-index': -1});
     })
 
-    //close popup "error-popup" by click outside the "error-popup" block or close button
+
+    // popup schedule
+    //open by button click
+    $('#schedule').on('click', function (e) {
+        $('#schedule-popup').css({'opacity': 1, 'pointer-events': 'auto'});
+    })
+
+
+    // close by btn close click or outside the popup
     $('#schedule-popup').on('click', function (event) {
         event.stopPropagation()
         if ($(event.target).parent().find('.close_schedule').length || event.target.id === 'btn_close_schedule') {
@@ -199,12 +204,14 @@ $(document).ready(function () {
         }
     })
 
-    $('input[name="tab-group"]').on('click', function (e) {
-        $('.tab-title').removeClass('active');
+    //change style for tab bnt (labels)
+    $('input[name="tab-group"]').on('click', function () {
+        $('.schedule__tab-title').removeClass('active');
         $('label[for="'+this.id+'"]').addClass('active')
     })
 
 })
+
 
 
 

@@ -671,13 +671,24 @@ h1, h2, h3 {
   background: rgba(11, 11, 11, 0.7882352941);
   display: block;
   opacity: 0;
-  opacity: 1;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
   transition: opacity 0.3s ease-in-out;
 }
-
-.inner {
+.schedule__block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: rgb(63, 62, 62);
+  width: auto;
+  height: 100vh;
+  text-align: center;
+  font-size: 20px;
+  z-index: 3;
+}
+.schedule__inner {
   overflow: hidden;
   background: rgb(244, 222, 255);
   padding: 20px;
@@ -688,21 +699,7 @@ h1, h2, h3 {
   flex-direction: column;
   max-height: 100vh;
 }
-
-.labels {
-  align-self: start;
-}
-
-.wrapper {
-  overflow: auto;
-  max-height: 100vh;
-  width: 100%;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
-  background: rgb(244, 222, 255);
-}
-
-.schedule-popup__close {
+.schedule .btn-close {
   overflow: visible;
   cursor: pointer;
   background: transparent;
@@ -727,83 +724,27 @@ h1, h2, h3 {
   font-size: 28px;
   font-family: Arial, Baskerville, monospace;
 }
-
-.schedule-popup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  color: rgb(63, 62, 62);
-  width: auto;
-  height: 100vh;
-  text-align: center;
-  font-size: 20px;
-  z-index: 3;
+.schedule__labels {
+  align-self: start;
 }
-
-.schedule__table {
-  font-family: RalewayLight, sans-serif;
-  font-size: 16px;
-  border-collapse: separate;
-  border-spacing: 0;
-  background-color: white;
-}
-
-.schedule__table th, td {
-  border-top: 1px solid black;
+.schedule__wrapper {
+  overflow: auto;
+  max-height: 100vh;
+  width: 100%;
   border-right: 1px solid black;
-  padding: 10px 10px;
-  box-sizing: border-box;
-  background-color: white;
-}
-
-.schedule__table th {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  font-weight: normal;
-  font-family: RalewayBold, sans-serif;
-}
-
-.schedule__table th:first-child, .schedule__table td:first-child {
-  font-family: RalewayMedium, sans-serif;
-  position: sticky;
-  left: 0;
-  background-color: white;
-  border-left: 1px solid black;
-}
-
-.cell-first-left {
-  font-family: RalewayBold, sans-serif !important;
-  z-index: 12 !important;
-}
-
-.last-column {
-  border-right: none !important;
-}
-
-.first-row {
   border-bottom: 1px solid black;
 }
-
-.second-row {
-  border-top: none;
-}
-
-.tabs {
+.schedule__tabs {
   position: relative; /* Относительное позиционирование */
   display: flex;
 }
-
-.tab, .tab-title {
+.schedule__tab-title {
   display: inline-block; /* Выстраиваем по горизонтали */
 }
-
-.tab input[type=radio] {
+.schedule__tab input[type=radio] {
   display: none;
 }
-
-.tab-title {
+.schedule__tab-title {
   position: relative;
   top: 0;
   background: #ccc; /* Цвет фона */
@@ -813,27 +754,65 @@ h1, h2, h3 {
   margin: 0 9px;
   font-size: 16px;
 }
-.tab-title.active {
+.schedule__tab-title.active {
   background-color: white;
   position: relative;
   top: 1px;
   z-index: 15;
 }
-
-.tab-content {
+.schedule__tab-content {
   display: none; /* Прячем вкладку */
-  max-height: 100vh;
 }
-
-.tab:checked .tab-title {
+.schedule__tab:checked .schedule__tab-title {
   position: relative; /* Относительное позиционирование */
   background: #fff; /* Цвет фона */
   top: 1px; /* Сдвигаем вниз */
   z-index: 1; /* Отображаем поверх содержимого */
 }
-
-.tab :checked ~ .tab-content {
+.schedule__tab :checked ~ .schedule__tab-content {
   display: flex; /* Показываем активную вкладку */
+}
+.schedule__table {
+  font-family: RalewayLight, sans-serif;
+  font-size: 16px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: white;
+  margin-right: -1px;
+}
+.schedule__table .cell-first-left {
+  font-family: RalewayBold, sans-serif !important;
+  z-index: 12 !important;
+}
+.schedule__table .last-column {
+  border-right: none !important;
+}
+.schedule__table .first-row {
+  border-bottom: 1px solid black;
+}
+.schedule__table .second-row {
+  border-top: none;
+}
+.schedule__table th, .schedule td {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  background-color: white;
+}
+.schedule__table th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  font-weight: normal;
+  font-family: RalewayBold, sans-serif;
+}
+.schedule__table th:first-child, .schedule__table td:first-child {
+  font-family: RalewayMedium, sans-serif;
+  position: sticky;
+  left: 0;
+  background-color: white;
+  border-left: 1px solid black;
 }
 
 @media screen and (max-width: 1227px) {
