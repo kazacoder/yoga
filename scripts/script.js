@@ -193,15 +193,17 @@ $(document).ready(function () {
     //open by button click
     $('#schedule').on('click', function (e) {
         $('#schedule-popup').css({'opacity': 1, 'pointer-events': 'auto'});
+        $('body').addClass('modal-open')
     })
 
 
     // close by btn close click or outside the popup
     $('#schedule-popup').on('click', function (event) {
-        event.stopPropagation()
+        event.stopPropagation();
         if ($(event.target).parent().find('.close_schedule').length || event.target.id === 'btn_close_schedule') {
             $(this).css({'opacity': 0, 'pointer-events': 'none'})
         }
+        $('body').removeClass('modal-open');
     })
 
     //change style for tab bnt (labels)
