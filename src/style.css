@@ -736,6 +736,7 @@ h1, h2, h3 {
 }
 
 .schedule {
+  font-family: RalewayLight, sans-serif;
   font-size: 16px;
   border-collapse: separate;
   border-spacing: 0;
@@ -754,9 +755,12 @@ h1, h2, h3 {
   position: sticky;
   top: 0;
   z-index: 10;
+  font-weight: normal;
+  font-family: RalewayBold, sans-serif;
 }
 
 .schedule th:first-child, .schedule td:first-child {
+  font-family: RalewayMedium, sans-serif;
   position: sticky;
   left: 0;
   background-color: white;
@@ -764,6 +768,7 @@ h1, h2, h3 {
 }
 
 .cell-first-left {
+  font-family: RalewayBold, sans-serif !important;
   z-index: 12 !important;
 }
 
