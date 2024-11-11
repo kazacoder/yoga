@@ -38,7 +38,7 @@ h1, h2, h3 {
     text-align: center;
 
     &:hover {
-        box-shadow: 0px 22px 23.52px 0.48px rgba(244, 222, 255, 0.45);
+        box-shadow: 0 22px 23.52px 0.48px rgba(244, 222, 255, 0.45);
     }
 
     &.main__btn {
@@ -703,8 +703,6 @@ h1, h2, h3 {
         font-family: Arial, Baskerville, monospace;
     }
 }
-
-
 
 @import "schedule";
 @import "adaptive";

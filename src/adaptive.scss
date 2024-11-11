@@ -30,6 +30,10 @@
 @media screen and (max-width: 1191px) {
     .main__btn {
         box-shadow: 0 0 0 4px white;
+
+        &:hover {
+            box-shadow: 0 0 0 4px white, 0 22px 23.52px 0.48px rgba(244, 222, 255, 0.45);
+        }
     }
 
     .main-content {

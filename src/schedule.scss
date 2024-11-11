@@ -99,6 +99,7 @@
             border: 1px solid #666; /* Параметры рамки */
             border-bottom: none; /* Снизу линию убираем */
             margin: 0 9px;
+            font-family: RalewayMedium, sans-serif;
             font-size: 16px;
 
             &.active {
@@ -111,13 +112,6 @@
 
         &-content {
             display: none; /* Прячем вкладку */
-        }
-
-        &:checked &-title {
-            position: relative; /* Относительное позиционирование */
-            background: #fff; /* Цвет фона */
-            top: 1px; /* Сдвигаем вниз */
-            z-index: 1; /* Отображаем поверх содержимого */
         }
 
         & :checked ~ &-content {

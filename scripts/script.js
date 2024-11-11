@@ -35,6 +35,7 @@ $(document).ready(function () {
                 breakpoint: 992,
                 settings: {
                     slidesToShow: 2,
+                    slidesToScroll: 2,
                 }
             },
             {
@@ -44,18 +45,6 @@ $(document).ready(function () {
                     slidesToScroll: 1,
                     dots: true,
                     arrows: false,
-                }
-            },
-            {
-                breakpoint: 375,
-                settings: {
-                    slidesToShow: 1,
-                }
-            },
-            {
-                breakpoint: 320,
-                settings: {
-                    slidesToShow: 1,
                 }
             },
         ],
@@ -82,7 +71,6 @@ $(document).ready(function () {
         e.preventDefault();
         $('#contacts')[0].scrollIntoView({behavior: 'smooth'});
     })
-
 
 
     // set up "Burger" menu
@@ -209,7 +197,7 @@ $(document).ready(function () {
     //change style for tab bnt (labels)
     $('input[name="tab-group"]').on('click', function () {
         $('.schedule__tab-title').removeClass('active');
-        $('label[for="'+this.id+'"]').addClass('active')
+        $('label[for="' + this.id + '"]').addClass('active')
     })
 
 })

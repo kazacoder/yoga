@@ -108,7 +108,7 @@ h1, h2, h3 {
   text-align: center;
 }
 .btn:hover {
-  box-shadow: 0px 22px 23.52px 0.48px rgba(244, 222, 255, 0.45);
+  box-shadow: 0 22px 23.52px 0.48px rgba(244, 222, 255, 0.45);
 }
 .btn.main__btn {
   width: 240px;
@@ -755,6 +755,7 @@ h1, h2, h3 {
   border: 1px solid #666; /* Параметры рамки */
   border-bottom: none; /* Снизу линию убираем */
   margin: 0 9px;
+  font-family: RalewayMedium, sans-serif;
   font-size: 16px;
 }
 .schedule__tab-title.active {
@@ -765,12 +766,6 @@ h1, h2, h3 {
 }
 .schedule__tab-content {
   display: none; /* Прячем вкладку */
-}
-.schedule__tab:checked .schedule__tab-title {
-  position: relative; /* Относительное позиционирование */
-  background: #fff; /* Цвет фона */
-  top: 1px; /* Сдвигаем вниз */
-  z-index: 1; /* Отображаем поверх содержимого */
 }
 .schedule__tab :checked ~ .schedule__tab-content {
   display: flex; /* Показываем активную вкладку */
@@ -842,6 +837,9 @@ h1, h2, h3 {
 @media screen and (max-width: 1191px) {
   .main__btn {
     box-shadow: 0 0 0 4px white;
+  }
+  .main__btn:hover {
+    box-shadow: 0 0 0 4px white, 0 22px 23.52px 0.48px rgba(244, 222, 255, 0.45);
   }
   .main-content__image {
     width: 65%;
