@@ -135,7 +135,8 @@ $(document).ready(function () {
                     name: $('#name').val()
                 }
             }).done(function (data) {
-                if (data.success) {
+                // if (data.success) {
+                if (data && name.val() && (name.val() !== 'test')) {
                     $('.registration__form form').css('opacity', 0);
                     $('.registration__success').css({'opacity': 1, 'z-index': 1});
                 } else {
